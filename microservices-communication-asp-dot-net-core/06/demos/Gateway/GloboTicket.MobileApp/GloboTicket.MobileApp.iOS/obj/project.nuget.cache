@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "dgSpecHash": "SsN0snQLYPqvXM3NBCof8u255F523UIjknvSAULlRWJG3Zv6i3L0cpciLXR9wLrGjUaDs8kBOvTUQMzv+ytwhQ==",
+  "success": true,
+  "projectFilePath": "D:\\Dropbox (Personal)\\Work\\PluralSight\\asp-net-core-microservices\\Production\\m6\\Demos\\Gateway\\GloboTicket.MobileApp\\GloboTicket.MobileApp.iOS\\GloboTicket.MobileApp.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gill\\.nuget\\packages\\microsoft.csharp\\4.3.0\\microsoft.csharp.4.3.0.nupkg.sha512",
+    "C:\\Users\\gill\\.nuget\\packages\\newtonsoft.json\\10.0.3\\newtonsoft.json.10.0.3.nupkg.sha512",
+    "C:\\Users\\gill\\.nuget\\packages\\system.componentmodel.typeconverter\\4.3.0\\system.componentmodel.typeconverter.4.3.0.nupkg.sha512",
+    "C:\\Users\\gill\\.nuget\\packages\\system.runtime.serialization.formatters\\4.3.0\\system.runtime.serialization.formatters.4.3.0.nupkg.sha512",
+    "C:\\Users\\gill\\.nuget\\packages\\system.runtime.serialization.primitives\\4.3.0\\system.runtime.serialization.primitives.4.3.0.nupkg.sha512",
+    "C:\\Users\\gill\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.5.3.2\\xamarin.essentials.1.5.3.2.nupkg.sha512",
+    "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.forms\\4.6.0.1141\\xamarin.forms.4.6.0.1141.nupkg.sha512"
+  ],
+  "logs": []
+}

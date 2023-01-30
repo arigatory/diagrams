@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ehk6OEz4Of3aV88RlQtFoJ+WNVV3ErVCPLzhjE//NU8imoBkBnTaSzMlUHgZn+GBehx+Hq2+FOrXjnkOf0fCKw==",
+  "success": true,
+  "projectFilePath": "D:\\Dropbox (Personal)\\Work\\PluralSight\\asp-net-core-microservices\\Production\\m5\\Demos\\Resiliency\\GloboTicket.Integration.Messages\\GloboTicket.Integration.Messages.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gill\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\gill\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
