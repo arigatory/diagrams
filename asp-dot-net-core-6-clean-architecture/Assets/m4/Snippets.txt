@@ -1,0 +1,81 @@
+Module 4 Snippets
+-----------------
+
+GetEventsListQueryHandler
+
+    public class GetEventsListQueryHandler : IRequestHandler<GetEventsListQuery, List<EventListVm>>
+    {
+        private readonly IAsyncRepository<Event> _eventRepository;
+        private readonly IMapper _mapper;
+
+        public GetEventsListQueryHandler(IMapper mapper, IAsyncRepository<Event> eventRepository)
+        {
+            _mapper = mapper;
+            _eventRepository = eventRepository;
+        }
+
+        public async Task<List<EventListVm>> Handle(GetEventsListQuery request, CancellationToken cancellationToken)
+        {
+            var allEvents = (await _eventRepository.ListAllAsync()).OrderBy(x => x.Date);
+            return _mapper.Map<List<EventListVm>>(allEvents);
+        }
+	}
+	
+	
+public class CreateEventCommand: IRequest<Guid>
+    {
+        public string Name { get; set; }
+        public int Price { get; set; }
+        public string Artist { get; set; }
+        public DateTime Date { get; set; }
+        public string Description { get; set; }
+        public string ImageUrl { get; set; }
+        public Guid CategoryId { get; set; }
+        public override string ToString()
+        {
+            return $"Event name: {Name}; Price: {Price}; By: {Artist}; On: {Date.ToShortDateString()}; Description: {Description}";
+        }
+    }
+	
+	
+public class CreateEventCommandHandler : IRequestHandler<CreateEventCommand, Guid>
+    {
+        private readonly IEventRepository _eventRepository;
+        private readonly IMapper _mapper;
+
+        public CreateEventCommandHandler(IMapper mapper, IEventRepository eventRepository)
+        {
+            _mapper = mapper;
+            _eventRepository = eventRepository;
+        }
+
+        public async Task<Guid> Handle(CreateEventCommand request, CancellationToken cancellationToken)
+        {
+            var @event = _mapper.Map<Event>(request);
+
+            @event = await _eventRepository.AddAsync(@event);
+
+            return @event.EventId;
+        }
+    }
+	
+	
+public class CreateEventCommandValidator : AbstractValidator<CreateEventCommand>
+    {
+        public CreateEventCommandValidator()
+        {
+            RuleFor(p => p.Name)
+                .NotEmpty().WithMessage("{PropertyName} is required.")
+                .NotNull()
+                .MaximumLength(50).WithMessage("{PropertyName} must not exceed 50 characters.");
+
+            RuleFor(p => p.Date)
+                .NotEmpty().WithMessage("{PropertyName} is required.")
+                .NotNull()
+                .GreaterThan(DateTime.Now);
+
+            RuleFor(p => p.Price)
+                .NotEmpty().WithMessage("{PropertyName} is required.")
+                .GreaterThan(0);
+        }
+    }
